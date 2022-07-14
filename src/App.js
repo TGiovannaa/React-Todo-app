@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     console.log("asd");
-  }, [items]);
+  }, [items]); // test 123
 
   const addItem = () => {
     if (isEdit) {

@@ -14,7 +14,7 @@ function App() {
 
   const onSubmit = (e) => {
     // neka izmena
-    e.preventDefault();
+    e.preventDefault(); // ewewe
   };
 
   useEffect(() => {

@@ -13,6 +13,7 @@ function App() {
   const [isEdit, setIsEdit] = useState(false);
 
   const onSubmit = (e) => {
+    // neka izmena
     e.preventDefault();
   };
 

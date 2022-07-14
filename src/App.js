@@ -44,19 +44,19 @@ function App() {
     setIsEdit("");
   };
 
-  const completeHendler = () => {
-    setItems(
-      items.map((item) => {
-        if (item.id === item.value) {
-          return {
-            ...item,
-            completed: !item.completed,
-          };
-        }
-        return item;
-      })
-    );
-  };
+  // const completeHendler = () => {
+  //   setItems(
+  //     items.map((item) => {
+  //       if (item.id === item.value) {
+  //         return {
+  //           ...item,
+  //           completed: !item.completed,
+  //         };
+  //       }
+  //       return item;
+  //     })
+  //   );
+  // };
 
   const deleteItem = (id) => {
     const newArray = items.filter((item) => item.id !== id);
@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo app</h1>
+      <h1>What's the plan for today?</h1>
       <form id="to-do-form" onSubmit={onSubmit}>
         <input
           className="to-do-form"
@@ -91,8 +91,8 @@ function App() {
                   <span>
                     <FontAwesomeIcon
                       className={`faicons ${item.completed ? "completed" : ""}`}
-                      icon="fas fa-circle-check  "
-                      onClick={completeHendler}
+                      icon="fas fa-circle-check"
+                      // onClick={completeHendler}
                     />
                     <FontAwesomeIcon
                       className="faicons"

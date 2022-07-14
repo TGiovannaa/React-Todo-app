@@ -13,13 +13,12 @@ function App() {
   const [isEdit, setIsEdit] = useState(false);
 
   const onSubmit = (e) => {
-    // neka izmena
-    e.preventDefault(); // ewewe
+    e.preventDefault();
   };
 
   useEffect(() => {
     console.log("asd");
-  }, [items]); // test 123
+  }, [items]);
 
   const addItem = () => {
     if (isEdit) {

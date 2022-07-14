@@ -1,0 +1,70 @@
+body {
+  background-color: rgb(164, 254, 224);
+}
+h1 {
+  color: aliceblue;
+  text-align: center;
+  padding: 0 25px;
+  font-size: 35px;
+}
+
+.App {
+  text-align: start;
+  background-color: rgb(214, 170, 206);
+  min-height: 500px;
+  width: 400px;
+  margin: 40px auto;
+}
+#to-do-form input {
+  background-color: rgb(171, 162, 222);
+  border: 0;
+  width: 200px;
+  height: 50px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  text-align: left;
+  color: aliceblue;
+}
+#to-do-form input::placeholder {
+  color: aliceblue;
+}
+#to-do-form input:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  height: 50px;
+  width: 80px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgb(220, 213, 108);
+  cursor: pointer;
+  font-weight: bolder;
+  color: azure;
+}
+
+.list {
+  color: #fff;
+  width: 300px;
+  background-color: #bf07ac;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.list p {
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.list p span {
+  position: absolute;
+  right: 10px;
+}
+
+.faicons {
+  margin: 0 5px;
+  font-size: 15px;
+}

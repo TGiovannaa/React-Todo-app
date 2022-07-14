@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCheckCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -15,10 +15,6 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
   };
-
-  useEffect(() => {
-    console.log("asd");
-  }, [items]);
 
   const addItem = () => {
     if (isEdit) {

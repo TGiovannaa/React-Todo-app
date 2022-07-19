@@ -79,3 +79,6 @@ button {
   margin: 0 5px;
   font-size: 15px;
 }
+.completed {
+  text-decoration: line-through;
+}

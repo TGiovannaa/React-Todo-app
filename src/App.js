@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 library.add(faTrash, faEdit, faCheckCircle);
 
 function App() {
-  const [value, setValue] = useState("");
+  const [input, setInput] = useState("");
   const [items, setItems] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
 
@@ -20,43 +20,29 @@ function App() {
     if (isEdit) {
       const newArray = [...items].map((listItem) => {
         if (listItem.id === isEdit.id) {
-          listItem.value = value;
+          listItem.value = input;
         }
 
         return listItem;
       });
       setItems(newArray);
-      setValue("");
+      setInput("");
     } else {
-      if (!value) {
+      if (!input) {
         alert("enter an item");
         return;
       }
       const item = {
         id: Math.floor(Math.random() * 1000),
-        value: value,
+        value: input,
       };
 
       setItems((oldList) => [...oldList, item]);
-      setValue("");
+      setInput("");
     }
 
     setIsEdit("");
   };
-
-  // const completeHendler = () => {
-  //   setItems(
-  //     items.map((item) => {
-  //       if (item.id === item.value) {
-  //         return {
-  //           ...item,
-  //           completed: !item.completed,
-  //         };
-  //       }
-  //       return item;
-  //     })
-  //   );
-  // };
 
   const deleteItem = (id) => {
     const newArray = items.filter((item) => item.id !== id);
@@ -65,7 +51,7 @@ function App() {
 
   const edit = (item) => {
     setIsEdit(item);
-    setValue(item.value);
+    setInput(item.value);
   };
 
   return (
@@ -76,8 +62,8 @@ function App() {
           className="to-do-form"
           type="text"
           placeholder="Add an item"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         ></input>
         <button onClick={() => addItem()} type="submit">
           Add
@@ -90,9 +76,8 @@ function App() {
                   {item.value}
                   <span>
                     <FontAwesomeIcon
-                      className={`faicons ${item.completed ? "completed" : ""}`}
                       icon="fas fa-circle-check"
-                      // onClick={completeHendler}
+                      // onClick={() => toggleComplete(item)}
                     />
                     <FontAwesomeIcon
                       className="faicons"
